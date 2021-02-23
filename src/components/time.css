@@ -1,0 +1,12 @@
+.Time-header 
+{
+  background-image:url("../img/hours.jpg");
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  font-size:20pt;
+  min-height:78vh;
+  font-family:arial,helvetica;
+  color:red;
+}
