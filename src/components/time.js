@@ -1,5 +1,6 @@
 import React from 'react';
 import './time.css';
+import App from '../App';
 
 const dayMap=new Map([[0,"Sun"],[1,"Mon"],[2,"Tue"],[3,"Wed"],[4,"Thu"],[5,"Fri"],[6,"Sat"]]);
 
@@ -11,8 +12,12 @@ class Time extends React.Component
 
 		this.state=
 		{
-			date:this.dateToString(new Date())
+			date:"click button to turn on output time",
+			text_button:"turn on",
+			isRunning:this.props.isRunning
 		};
+
+		this.output=this.output.bind(this);
 	}
 
 	componentWillMount()
@@ -23,7 +28,6 @@ class Time extends React.Component
 	componentDidMount()
 	{
 		console.log("componentDidMount");
-    	this.interval=setInterval(()=>this.time(),1000);
     }
 
 	componentWillUpdate()
@@ -35,30 +39,50 @@ class Time extends React.Component
 	{
 		console.log("componentDidUpdate");
 	}
-	  
-	componentWillUnmount() 
-	{
-		console.log("componentWillUnmount");
-		clearInterval(this.interval);
-	}
 
 	render()
 	{
 		console.log("date:"+this.state.date);
+		
 		return(
 			<div className="Time">
 				<header className="Time-header">
-		      		<p>{this.state.date}</p>
+		      		<div id="time">{this.state.date}</div>
+		      		<button type="button" id="button" onClick={this.output}>
+			      				{this.state.text_button}
+			      	</button>
 		      	</header>
 		    </div>
 		    );
+	}
+
+	output()
+	{
+		if(!this.state.isRunning)
+		{
+			this.interval=setInterval(()=>this.time(),1000);
+		} 
+		
+		else
+		{
+			
+			clearInterval(this.interval);
+			this.setState(state=>(
+			{
+				date:"click button to turn on output time",
+				text_button:"turn on",
+				isRunning:!state.isRunning
+			}));	
+		}
 	}
 
 	time()
 	{
 		this.setState(
 		{
-			date:this.dateToString(new Date())
+			date:this.dateToString(new Date()),
+			text_button:"turn off",
+			isRunning:true
 		});
 	}
 
@@ -80,6 +104,7 @@ class Time extends React.Component
 	{
 		return number<10 ? `0${number}` : number;
 	}
+
 }
 
 export default Time;
