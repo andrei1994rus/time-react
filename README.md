@@ -10,3 +10,7 @@ Test React App. This app counts time with an interval of 1 second and has button
 - HTML;
 - JS;
 - CSS.
+
+---
+
+[URL](https://andrei1994rus.github.io/time-react/) .
