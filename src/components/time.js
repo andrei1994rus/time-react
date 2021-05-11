@@ -20,43 +20,44 @@ class Time extends React.Component
 		this.output=this.output.bind(this);
 	}
 
-	componentWillMount()
+	componentWillMount=()=>
 	{
 		console.log("componentWillMount");
 	}
 
-	componentDidMount()
+	componentDidMount=()=>
 	{
 		console.log("componentDidMount");
     }
 
-	componentWillUpdate()
+	componentWillUpdate=()=>
 	{
 		console.log("componentWillUpdate");
 	}
 
-	componentDidUpdate()
+	componentDidUpdate=()=>
 	{
 		console.log("componentDidUpdate");
 	}
 
-	render()
+	render=()=>
 	{
-		console.log("date:"+this.state.date);
+		const {date,text_button}=this.state;
+		console.log("date:"+date);
 		
 		return(
 			<div className="Time">
 				<header className="Time-header">
-		      		<div id="time">{this.state.date}</div>
+		      		<div id="time">{date}</div>
 		      		<button type="button" id="button" onClick={this.output}>
-			      				{this.state.text_button}
+			      		{text_button}
 			      	</button>
 		      	</header>
 		    </div>
-		    );
+		);
 	}
 
-	output()
+	output=()=>
 	{
 		if(!this.state.isRunning)
 		{
@@ -76,7 +77,7 @@ class Time extends React.Component
 		}
 	}
 
-	time()
+	time=()=>
 	{
 		this.setState(
 		{
@@ -86,25 +87,14 @@ class Time extends React.Component
 		});
 	}
 
-	dateToString(date)
-	{
-		return "current time:"+
-		this.dayToString(date.getDay())+" "+this.necessaryAdd(date.getDate())+"."+
-		this.necessaryAdd(date.getMonth())+"."+date.getFullYear()+" "+
-		this.necessaryAdd(date.getHours())+":"+this.necessaryAdd(date.getMinutes())+":"+
+	dateToString=date=>"current time:"+this.dayToString(date.getDay())+" "+
+		this.necessaryAdd(date.getDate())+"."+this.necessaryAdd(date.getMonth())+"."+date.getFullYear()+
+		" "+this.necessaryAdd(date.getHours())+":"+this.necessaryAdd(date.getMinutes())+":"+
 		this.necessaryAdd(date.getSeconds());
-	}
 
-	dayToString(day)
-	{
-		return dayMap.get(day);
-	}
+	dayToString=day=>dayMap.get(day);
 
-	necessaryAdd(number)
-	{
-		return number<10 ? `0${number}` : number;
-	}
-
+	necessaryAdd=number=>number<10 ? `0${number}` : number;
 }
 
 export default Time;

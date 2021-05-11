@@ -16,14 +16,15 @@ class App extends React.Component
 
 	}
 
-	render()
+	render=()=>
 	{
+		const {isRunning}=this.state;
 		return(
 			<div className="App">
 			    <header className="App-header">
 					Welcome to site!
 					<hr/>
-					<Time isRunning={this.state.isRunning}/>
+					<Time isRunning={isRunning}/>
 				</header>
 	    	</div>
     	);
