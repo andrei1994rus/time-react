@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/time-react/static/css/main.de23e369.chunk.css",
+    "main.js": "/time-react/static/js/main.535b2313.chunk.js",
+    "main.js.map": "/time-react/static/js/main.535b2313.chunk.js.map",
+    "runtime-main.js": "/time-react/static/js/runtime-main.71e97c1b.js",
+    "runtime-main.js.map": "/time-react/static/js/runtime-main.71e97c1b.js.map",
+    "static/js/2.31bc058d.chunk.js": "/time-react/static/js/2.31bc058d.chunk.js",
+    "static/js/2.31bc058d.chunk.js.map": "/time-react/static/js/2.31bc058d.chunk.js.map",
+    "index.html": "/time-react/index.html",
+    "static/css/main.de23e369.chunk.css.map": "/time-react/static/css/main.de23e369.chunk.css.map",
+    "static/js/2.31bc058d.chunk.js.LICENSE.txt": "/time-react/static/js/2.31bc058d.chunk.js.LICENSE.txt",
+    "static/media/time.css": "/time-react/static/media/hours.9485090b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.71e97c1b.js",
+    "static/js/2.31bc058d.chunk.js",
+    "static/css/main.de23e369.chunk.css",
+    "static/js/main.535b2313.chunk.js"
+  ]
+}
