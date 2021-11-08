@@ -1,9 +1,13 @@
 .App 
 {
-  text-align:center;
-  font-size:24pt;
-  color:black;
-  font-style:italic;
-  font-weight:bold;
-  font-family:arial,helvetica;
+	width:100%;
+	color:black;
+	font-style:italic;
+	font-weight:bold;
+}
+
+.App-header
+{
+	text-align:center;	
+	font-size:4vmax;
 }
