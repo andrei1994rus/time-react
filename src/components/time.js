@@ -1,6 +1,5 @@
 import React from 'react';
 import './time.css';
-import App from '../App';
 
 const dayMap=new Map([[0,"Sun"],[1,"Mon"],[2,"Tue"],[3,"Wed"],[4,"Thu"],[5,"Fri"],[6,"Sat"]]);
 
@@ -49,9 +48,11 @@ class Time extends React.Component
 			<div className="Time">
 				<header className="Time-header">
 		      		<div id="time">{date}</div>
-		      		<button type="button" id="button" onClick={this.output}>
+					<div className="button">
+					<button type="button" onClick={this.output}>
 			      		{text_button}
 			      	</button>
+					</div>
 		      	</header>
 		    </div>
 		);
@@ -88,7 +89,7 @@ class Time extends React.Component
 	}
 
 	dateToString=date=>"current time:"+this.dayToString(date.getDay())+" "+
-		this.necessaryAdd(date.getDate())+"."+this.necessaryAdd(date.getMonth())+"."+date.getFullYear()+
+		this.necessaryAdd(date.getDate())+"."+this.necessaryAdd(date.getMonth()+1)+"."+date.getFullYear()+
 		" "+this.necessaryAdd(date.getHours())+":"+this.necessaryAdd(date.getMinutes())+":"+
 		this.necessaryAdd(date.getSeconds());
 

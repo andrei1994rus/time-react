@@ -24,8 +24,8 @@ class App extends React.Component
 			    <header className="App-header">
 					Welcome to site!
 					<hr/>
-					<Time isRunning={isRunning}/>
 				</header>
+				<Time isRunning={isRunning}/>
 	    	</div>
     	);
 	}
